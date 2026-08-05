@@ -20,14 +20,7 @@ This repository is a public export of the project for demonstration and portfoli
 - [Backend Design](#backend-design)
 - [Database Architecture](#database-architecture)
 - [Authentication System](#authentication-system)
-- [File Storage](#file-storage)
-- [Docker Setup](#docker-setup)
-- [Installation](#installation)
-- [Database Initialization](#database-initialization)
-- [Environment Configuration](#environment-configuration)
-- [Frontend Configuration](#frontend-configuration)
-- [Running the Project](#running-the-project)
-- [Troubleshooting](#troubleshooting)
+- [File Storage](#file-storage)ronment-configuration)
 - [Deployment Notes](#deployment-notes)
 - [Future Improvements](#future-improvements)
 - [Lessons Learned](#lessons-learned)
@@ -249,28 +242,33 @@ Example structure:
 │
 ├── frontend/
 │   ├── index.html
-│   ├── signup pages
-│   ├── JavaScript files
+│   ├── rest of the pages
+│   ├── images used on the pages
+│   ├── JS files
 │   └── CSS files
 │
-├── database/
-│   ├── auth_database.sql
-│   └── main_database.sql
+├── sql_scripts/
+│   ├── jwt.sql
+│   └── main.sql
 │
 ├── env_files/
-│   ├── postgres-auth.env.example
-│   ├── postgres-main.env.example
-│   ├── postgrest-auth.env.example
-│   └── postgrest-main.env.example
+│   ├── postgres-auth.env
+│   ├── postgres-main.env
+│   ├── postgrest-auth.env
+│   └── postgrest-main.env
 │
 ├── nginx/
+│   ├── certs
 │   └── conf.d/
 │       ├── nginx.conf
 │       ├── roommates_http.conf
+│       ├── roommates_https.conf
 │       ├── file_cors.conf
 │       └── psql_cors.conf
 │
-└── README.md
+├── README.md
+│
+└──jwt_secret
 ```
 
 ---
@@ -463,33 +461,13 @@ Install:
 
 ---
 
-## Clone Repository
-
-```
-git clone <repository-url>
-
-cd roommates
-```
-
----
+Clone the whole repository first.
 
 # Environment Configuration
 
-Create local environment files.
+This repo comes with created .env files, but still look through them before running the system.
 
-Example:
-
-```
-cp env_files/postgres-auth.env.example env_files/postgres-auth.env
-
-cp env_files/postgres-main.env.example env_files/postgres-main.env
-
-cp env_files/postgrest-auth.env.example env_files/postgrest-auth.env
-
-cp env_files/postgrest-main.env.example env_files/postgrest-main.env
-```
-
-Modify values according to your environment.
+Also check the secret file. Modify values according to your environment.
 
 Environment files contain:
 
@@ -502,134 +480,25 @@ Environment files contain:
 
 # Database Initialization
 
-The project requires two PostgreSQL databases.
+The project requires two PostgreSQL databases, as described above.
 
 Initialization scripts:
 
 ```
 database/
-├── auth_database.sql
-└── main_database.sql
+├── jwt.sql <-------- authentication database
+└── main.sql <------- main business logic database
 ```
-
----
-
-## Authentication Database
-
-Example:
-
-```
-psql \
--h localhost \
--p 5433 \
--U postgres \
-< database/auth_database.sql
-```
-
----
-
-## Main Database
-
-Example:
-
-```
-psql \
--h localhost \
--p 5432 \
--U postgres \
-< database/main_database.sql
-```
-
----
 
 # Frontend Configuration
 
-The frontend uses:
+For frontend configuration, pay attention to:
 
 ```
 frontend/js/config.js
 ```
 
-Example:
-
-```javascript
-const CONFIG = {
-    API_URL: "http://localhost"
-};
-```
-
-Change this value depending on the backend location.
-
----
-
-# Running the Project
-
-Start all containers:
-
-```
-docker compose up -d
-```
-
-Check running containers:
-
-```
-docker ps
-```
-
-View logs:
-
-```
-docker compose logs
-```
-
-Stop the project:
-
-```
-docker compose down
-```
-
----
-
-# Troubleshooting
-
-## 502 Bad Gateway
-
-Usually means Nginx cannot reach PostgREST.
-
-Check:
-
-```
-docker logs nginx-proxy
-```
-
-Verify:
-
-- Containers are running
-- All services are on the same Docker network
-- Nginx upstream points to the correct container name
-
----
-
-## Database connection errors
-
-Check:
-
-```
-docker logs postgres-main
-```
-
-and verify environment variables.
-
----
-
-## Frontend cannot connect
-
-Check:
-
-- `config.js`
-- Browser console
-- CORS configuration
-- Nginx routes
+This file was specifically made to simplify changing target address for the frontend. Change it according to your needs.
 
 ---
 
@@ -637,11 +506,11 @@ Check:
 
 The original deployment used:
 
-- Ubuntu server
-- Docker Compose
-- Nginx
-- HTTPS certificates
-- PostgreSQL persistent volumes
+- Ubuntu Server VM
+  - Docker Compose
+  - Nginx
+  - HTTPS certificates
+  - PostgreSQL persistent volumes
 
 Production-specific files are not included in this repository:
 
