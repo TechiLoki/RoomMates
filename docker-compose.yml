@@ -1,0 +1,73 @@
+services:
+
+  postgres-auth:
+    container_name: postgres-auth
+    image: postgres:17.2
+    ports:
+      - "5433:5432"
+    env_file: ./env_files/postgres-auth.env
+    volumes:
+      - postgres-auth-data:/var/lib/postgresql/data
+    networks:
+      - roommates-backend
+    restart: always
+
+  postgrest-auth:
+    container_name: postgrest-auth
+    image: postgrest/postgrest:v12.2.3
+    ports:
+      - "3001:3000"
+    env_file: ./env_files/postgrest-auth.env
+    networks:
+      - roommates-backend
+    restart: always
+    
+  postgres-main:
+    container_name: postgres-main
+    image: postgres:17.2
+    ports:
+      - "5432:5432"
+    env_file: ./env_files/postgres-main.env
+    volumes:
+      - postgres-main-data:/var/lib/postgresql/data
+    networks:
+      - roommates-backend
+    restart: always
+
+  postgrest-main:
+    container_name: postgrest-main
+    image: postgrest/postgrest:v12.2.3
+    env_file: ./env_files/postgrest-main.env
+    ports:
+      - "3000:3000"
+    networks:
+      - roommates-backend
+    restart: always
+
+  nginx:
+    image: nginx:1.27.4
+    container_name: nginx-proxy
+    ports:
+       - "80:80"
+       - "443:443"
+    volumes:
+       - ./DB_fs/:/nginx_files
+       - ./frontend:/nginx_files/frontend
+       - ./nginx/conf.d/nginx.conf:/etc/nginx/nginx.conf
+       - ./nginx/conf.d/roommates_http.conf:/etc/nginx/roommates_http.conf
+         #- ./nginx/conf.d/roommates_https.conf:/etc/nginx/roommates_https.conf
+       - ./nginx/conf.d/file_cors.conf:/etc/nginx/file_cors.conf
+       - ./nginx/conf.d/psql_cors.conf:/etc/nginx/psql_cors.conf
+         #- ./nginx/certs/privkey.pem:/etc/nginx/privkey.pem
+         #- ./nginx/certs/fullchain.pem:/etc/nginx/fullchain.pem
+    networks:
+       - roommates-backend
+    restart: always
+
+volumes:
+  postgres-auth-data:
+  postgres-main-data:
+
+networks:
+  roommates-backend:
+    driver: bridge

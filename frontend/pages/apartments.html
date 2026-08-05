@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoomMates</title>
+
+    <link rel="stylesheet" href="../styles/css/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-left">
+          <h1 class="header-logo"><a href="#">RoomMates</a></h1>
+        </div>
+        <div class="header-right">
+          <div class="user-profile">
+            <img
+              alt="Profile Picture"
+              src="../images/examples/image.png"
+              class="user-profile-avatar"
+            />
+            <p class="user-profile-name"></p>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="offers" id="offers">
+          <div class="offers-filtration">
+            <h2 class="offers-filtration-title">
+              We will help you find suitable apartment
+            </h2>
+            <p class="offers-filtration-text">
+              Explore a wide range of apartments across 12 cities in Georgia.
+              Whether you're looking for a cozy studio or a spacious shared
+              apartment, we have options to fit every budget and lifestyle. Our
+              advanced filtering tools make it easy to narrow down your search
+              and find the perfect place to call home.
+            </p>
+            <div class="appartment-func">
+              <h2 class="offers-filtration-title">Choose appartments:</h2>
+              <div class="box">
+                <div class="offers-filtration-box">
+                  <div class="offers-filtration-box-el">
+                    <div
+                      class="offers-filtration-box-el-btn"
+                      data-dropdown="region"
+                    >
+                      <button>City</button>
+                      <img
+                        src="../images/main-page/icons/arrow-down.svg"
+                        alt="arrow down"
+                        class="btn-up active"
+                      />
+                      <img
+                        src="../images/main-page/icons/arrow-up.svg"
+                        alt="arrow down"
+                        class="btn-down"
+                      />
+                    </div>
+                    <div
+                      class="offers-filtration-box-el-dropdown"
+                      id="region-dropdown"
+                    >
+                      <h3 class="offers-filtration-box-el-dropdown-title">
+                        Filter By City:
+                      </h3>
+                      <div
+                        class="offers-filtration-box-el-dropdown-list grid-col--3"
+                      >
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Tbilisi</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Batumi</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Kutaisi</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Rustavi</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Gori</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Poti</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Zugdidi</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Marneuli</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Akhmeta</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Telavi</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Kobuleti</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>Senaki</a>
+                        </div>
+                      </div>
+                      <button class="offers-filtration-box-el-dropdown-btn">
+                        Filter
+                      </button>
+                    </div>
+                  </div>
+                  <div class="offers-filtration-box-el">
+                    <div
+                      class="offers-filtration-box-el-btn"
+                      data-dropdown="price"
+                    >
+                      <button>Price category</button>
+                      <img
+                        src="../images/main-page/icons/arrow-down.svg"
+                        alt="arrow down"
+                        class="btn-up active"
+                      />
+                      <img
+                        src="../images/main-page/icons/arrow-up.svg"
+                        alt="arrow down"
+                        class="btn-down"
+                      />
+                    </div>
+                    <div
+                      class="offers-filtration-box-el-dropdown"
+                      id="price-dropdown"
+                    >
+                      <h3 class="offers-filtration-box-el-dropdown-title">
+                        Filter By Price Range:
+                      </h3>
+                      <div
+                        class="offers-filtration-box-el-dropdown-list grid-col--2"
+                      >
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <input class="minPrice" placeholder="Min Price" />
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <input class="maxPrice" placeholder="Max Price" />
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <a>Min Price</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <a>max Price</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>50,000 $</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>50,000 $</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>100,000 $</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>100,000 $</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>150,000 $</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>200,000 $</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>200,000 $</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>200,000 $</p>
+                        </div>
+                      </div>
+                      <button class="offers-filtration-box-el-dropdown-btn">
+                        Filter
+                      </button>
+                    </div>
+                  </div>
+                  <div class="offers-filtration-box-el">
+                    <div
+                      class="offers-filtration-box-el-btn"
+                      data-dropdown="area"
+                    >
+                      <button>Area</button>
+                      <img
+                        src="../images/main-page/icons/arrow-down.svg"
+                        alt="arrow down"
+                        class="btn-up active"
+                      />
+                      <img
+                        src="../images/main-page/icons/arrow-up.svg"
+                        alt="arrow down"
+                        class="btn-down"
+                      />
+                    </div>
+                    <div
+                      class="offers-filtration-box-el-dropdown"
+                      id="area-dropdown"
+                    >
+                      <h3 class="offers-filtration-box-el-dropdown-title">
+                        Filter By Price Range:
+                      </h3>
+                      <div
+                        class="offers-filtration-box-el-dropdown-list grid-col--2"
+                      >
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <input class="minArea" placeholder="Min (m²)" />
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <input class="maxArea" placeholder="Max (m²)" />
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <a>Min (m²)</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <a>max (m²)</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>50,000 m²</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>50,000 m²</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>100,000 m²</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>100,000 m²</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>150,000 m²</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>200,000 m²</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>200,000 m²</p>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <p>200,000 m²</p>
+                        </div>
+                      </div>
+                      <button class="offers-filtration-box-el-dropdown-btn">
+                        Filter
+                      </button>
+                    </div>
+                  </div>
+                  <div class="offers-filtration-box-el">
+                    <div
+                      class="offers-filtration-box-el-btn"
+                      data-dropdown="bedroom"
+                    >
+                      <button>Number of bedrooms</button>
+                      <img
+                        src="../images/main-page/icons/arrow-down.svg"
+                        alt="arrow down"
+                        class="btn-up active"
+                      />
+                      <img
+                        src="../images/main-page/icons/arrow-up.svg"
+                        alt="arrow down"
+                        class="btn-down"
+                      />
+                    </div>
+                    <div
+                      class="offers-filtration-box-el-dropdown"
+                      id="bedroom-dropdown"
+                    >
+                      <h3 class="offers-filtration-box-el-dropdown-title">
+                        Filter By Number of Bedrooms:
+                      </h3>
+                      <div
+                        class="offers-filtration-box-el-dropdown-list grid-col--2"
+                      >
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>1</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>2</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>3</a>
+                        </div>
+                        <div class="offers-filtration-box-el-dropdown-list-row">
+                          <div class="icon-for-marking">
+                            <img
+                              alt="icon-empty"
+                              src="../images/main-page/icons/icon-empty.svg"
+                              class="empty-icon"
+                            />
+                            <img
+                              alt="icon-marked"
+                              src="../images/main-page/icons/icon-marked.svg"
+                              class="marked-icon"
+                            />
+                          </div>
+                          <a>3+</a>
+                        </div>
+                      </div>
+                      <button class="offers-filtration-box-el-dropdown-btn">
+                        Filter
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn-add-listing" id="add-listing">
+                  <span class="btn-icon">+</span>
+                  <span class="btn-text">Add Listing</span>
+                </button>
+              </div>
+              <div class="offers-apartments"></div>
+              <div class="pagination">
+                <button class="pagination-btn prev" disabled>Previous</button>
+                <div class="pagination-numbers">
+                  <button class="pagination-numbers-btn active"></button>
+                  <button class="pagination-numbers-btn"></button>
+                  <button class="pagination-numbers-btn"></button>
+                  <span class="ellipsis">...</span>
+                  <button class="page-number"></button>
+                </div>
+                <button class="pagination-btn next">Next</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer-main">
+          <nav class="footer-main-col">
+            <p class="footer-main-col-heading">Navigation</p>
+            <ul class="footer-main-col-list">
+              <li><a class="footer-main-col-list-link" href="#">Home</a></li>
+              <li>
+                <a class="footer-main-col-list-link" href="#about-us"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a class="footer-main-col-list-link" href="#offers">Offers</a>
+              </li>
+              <li>
+                <a class="footer-main-col-list-link" href="#registration"
+                  >Registration</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="footer-main-col">
+            <p class="footer-main-col-heading">Contact information</p>
+            <ul class="footer-main-col-list">
+              <li>
+                <a
+                  class="footer-main-col-list-link"
+                  href="mailto:roommatesgeorgia@gmail.com"
+                  target="_blank"
+                  >roommatesgeorgia@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  class="footer-main-col-list-link"
+                  href="https://www.google.com/maps?q=41.712110,44.748635"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ilia State university, T buillding</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer-main-col">
+            <p class="footer-main-col-heading">Contributors</p>
+            <address>
+              <ul class="footer-main-col-list">
+                <li>
+                  <a
+                    class="footer-main-col-list-link"
+                    target="_blank"
+                    href="https://github.com/TechiLoki"
+                    >Grigori Kikvadze</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-main-col-list-link"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/tekla-gogua-223a1831a/"
+                  >
+                    Tekla gogua</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-main-col-list-link"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/anzor-tsiskarishvili-5b0920330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                    >Anzor Tsiskarishvili</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </nav>
+          <nav class="footer-main-col">
+            <p class="footer-main-col-heading">Follow Us</p>
+            <ul class="footer-main-col-list">
+              <div class="follow-us">
+                <ul>
+                  <li>
+                    <a href="https://www.x.com/RoommatesGe" target="_blank"
+                      ><img
+                        src="https://cdn.prod.website-files.com/5d66bdc65e51a0d114d15891/64cebc6c19c2fe31de94c78e_X-vector-logo-download.png"
+                        alt="X Logo"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/roommates_ge"
+                      target="_blank"
+                      ><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png"
+                        alt="Instagram Logo"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-additional">
+          <p class="footer-additional-txt">&copyAll Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+	<script src="../js/config.js"></script>
+    <script src="../js/apartments.js"></script>
+  </body>
+</html>
