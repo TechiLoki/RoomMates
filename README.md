@@ -1,5 +1,3 @@
-# RoomMates
-An MVP of a website for searching for roommates in Georgia, made as an university assignment
 # Roommates
 
 A full-stack roommate and apartment listing platform developed as a university group project.
