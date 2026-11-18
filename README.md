@@ -6,7 +6,7 @@ The goal of the project was to create a platform where users can register, creat
 
 The project uses a custom backend architecture based around PostgreSQL, PostgREST, Docker, and Nginx. The original version was deployed on a private Linux server using Docker Compose.
 
-This repository is a public export of the project for demonstration and portfolio purposes.
+This repository contains the project's source code and deployment configuration.
 
 ---
 
